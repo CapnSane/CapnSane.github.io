@@ -1,0 +1,67 @@
+body {
+    color: red;
+    max-width: auto;
+    margin: 0;
+    background:
+    url(/assets/back1.png) bottom center no-repeat;
+    /* url(/assets/bob.png) repeat; */
+}
+body {
+    background-color: rgb(245, 230, 94);
+  }
+
+div.myphoto img {
+    border-radius: 50%;
+} 
+
+div.aboutme {
+  text-align: justify;
+}
+
+img.dark {
+    filter: brightness(25%);
+  }
+
+
+div.carousel-inner div.carousel-item {
+  width:100%;
+  height: 500px !important;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+div.carousel-item div.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: initial;
+}
+
+div.carousel-caption p {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.move-up-100 {
+  transform: translateY(-100px);
+}
+
+.espaco {
+  height: 200px;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+#img-grass {
+  transform: translateY(-750px);
+}
+
+.black-text {
+  color: black;
+}
+
+.row.about {
+  margin-top: 12em;
+}
