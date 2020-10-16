@@ -7,7 +7,7 @@ body {
     /* url(/assets/bob.png) repeat; */
 }
 body {
-    background-color: rgb(245, 230, 94);
+    background-color: rgb(17, 11, 73);
   }
 
 div.myphoto img {
@@ -21,6 +21,10 @@ div.aboutme {
 img.dark {
     filter: brightness(25%);
   }
+
+img.dark50 {
+  filter: brightness(50%);
+}
 
 
 div.carousel-inner div.carousel-item {
@@ -50,12 +54,32 @@ div.carousel-caption p {
   height: 200px;
 }
 
+.textblackshadowblack{
+  color: black;
+  text-shadow: 2px 2px 5px #000000;
+}
+
+.textblackshadowwhite{
+  color: black;
+  text-shadow: 2px 2px 6px #ffffff, -2px -2px 8px #ffffff;
+}
+.textwhiteshadowblack{
+  color: white;
+  text-shadow: 2px 2px 1px #000000, 0 0 1px #000000;
+}
+
+
+.textwhiteshadowwhite{
+  color: white;
+  text-shadow: 3px 3px 10px #ffffff;
+}
+
 .bg-white {
   background-color: white;
 }
 
 #img-grass {
-  transform: translateY(-750px);
+
 }
 
 .black-text {
