@@ -1,18 +1,18 @@
 body {
-    color: red;
+    color: rgb(60, 255, 0);
     max-width: auto;
     margin: 0;
-    background:
-    url(/assets/back1.png) bottom center no-repeat;
+    /* background:
+    url(/assets/back1.png) bottom center no-repeat; */
     /* url(/assets/bob.png) repeat; */
 }
 body {
-    background-color: rgb(17, 11, 73);
+    background-color: rgb(20, 20, 20);
   }
 
-div.myphoto img {
-    border-radius: 50%;
-} 
+div.indice {
+  background-color: rgb(0, 0, 0);
+}
 
 div.aboutme {
   text-align: justify;
@@ -46,8 +46,13 @@ div.carousel-caption p {
   margin-bottom: 0.5em;
 }
 
-.move-up-100 {
-  transform: translateY(-100px);
+.element {
+  position: absolute;
+  transform: translate3d(-20px, 22px, 0px);
+  top: 0px;
+  background-color: rgb(20, 20, 20);
+  left: -50px !important;
+  will-change: transform;
 }
 
 .espaco {
@@ -78,14 +83,36 @@ div.carousel-caption p {
   background-color: white;
 }
 
-#img-grass {
-
-}
-
 .black-text {
   color: black;
 }
 
 .row.about {
-  margin-top: 12em;
+  margin-top: 3em;
+}
+
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.ml-1{
+  margin-left: 50px !important; 
+}
+
+
+hr {
+  border: none;
+  border-top: 3px double rgb(60, 255, 0);
+  color: rgb(60, 255, 0);
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+}
+
+hr:after {
+  background: rgb(20, 20, 20);
+  content: '🙡🙣';
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
 }
