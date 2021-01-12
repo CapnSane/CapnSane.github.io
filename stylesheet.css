@@ -1,15 +1,9 @@
 body {
   color: #1F7F1F;
   max-width: auto;
-  /* margin: 300px; */
-  /* margin-top: 150px; */
+  background-color: rgb(15, 15, 15, 0.98);
   background:
     url(/assets/beads.jpg) bottom center repeat fixed;
-  /* url(/assets/bob.png) repeat; */
-}
-
-body {
-  background-color: rgb(15, 15, 15, 0.98);
 }
 
 div.indice {
@@ -18,7 +12,6 @@ div.indice {
 
 div.copyright {
   background-color: rgba(5, 15, 0, 0.8);
-  /* height: 28px; */
 }
 
 div.aboutme {
@@ -33,8 +26,9 @@ img.dark50 {
   filter: brightness(50%);
 }
 
-.border-success {
-  border-color: #1F7F1F !important;
+img.autofig {
+  max-width: 100%;
+  height: 900px;
 }
 
 div.carousel-inner div.carousel-item {
@@ -51,22 +45,30 @@ div.carousel-item div.carousel-caption {
   bottom: initial;
 }
 
-/* div.carousel-caption p {
-  font-size: 1.1em;
-} */
+html {
+  scroll-behavior: smooth;
+}
+
+hr {
+  border: none;
+  border-top: 3px double #1F7F1F;
+  color: #1F7F1F;
+  text-align: center;
+  height: 5px;
+}
+
+hr:after {
+  content: '🙡🙣';
+  position: relative;
+  top: -16px;
+}
 
 .element {
   position: absolute;
   transform: translate3d(-20px, 22px, 0px);
   top: 0px;
   background-color: rgb(20, 20, 20);
-  /* left: -50px !important; */
   will-change: transform;
-}
-
-img.autofig {
-  max-width: 100%;
-  height: 900px;
 }
 
 .backg {
@@ -100,10 +102,13 @@ img.autofig {
   text-shadow: 2px 2px 1px #000000, 0 0 1px #000000;
 }
 
-
 .textwhiteshadowwhite {
   color: white;
   text-shadow: 3px 3px 10px #ffffff;
+}
+
+.border-success {
+  border-color: #1F7F1F !important;
 }
 
 .bg-white {
@@ -112,25 +117,4 @@ img.autofig {
 
 .black-text {
   color: black;
-}
-
-hr {
-  border: none;
-  border-top: 3px double #1F7F1F;
-  color: #1F7F1F;
-  /* overflow: visible; */
-  text-align: center;
-  height: 5px;
-}
-
-hr:after {
-  /* background-color: rgb(15, 15, 15); */
-  content: '🙡🙣';
-  /* padding: 0 3px; */
-  position: relative;
-  top: -16px;
-}
-
-html {
-  scroll-behavior: smooth;
 }
