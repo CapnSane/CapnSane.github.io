@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="Leonardo Schneider" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Reynolds Number calculator by Leonardo Schneider</title>
+  <script src="converter.js"></script>
+</head>
+
+<body>
+
+  <h2>Reynolds Number Calculator</h2>
+  <p> This calculator calculates the Reynolds Number using the flow characteristics provided.
+    This number tells us what type of flow is expected for a given pipe, whether laminar, transitional or turbulent.
+  </p>
+  <p> By convention, there is an approximate number of Reynolds where the limits of some regimes
+    are defined. In systems whose Re is less than <strong>2000</strong> there is no turbulence. This non-turbulent
+    regime is called laminar flow. Systems whose Re is greater than 2000 are turbulent.
+  </p>
+
+  <p>
+    <label>Free-stream fluid velocity, V:</label>
+    <input id="inputVelocity" type="number" step="0.001" placeholder="Free-stream fluid velocity" oninput="calcRe(this.value)"
+      onchange="calcRe(this.value)">
+  </p>
+  <p>
+    <label>Characteristic distance (or pipe diameter), L:</label>
+    <input id="inputDiameter" type="number" step="0.001" placeholder="Pipe diameter" oninput="calcRe(this.value)"
+      onchange="calcRe(this.value)">
+  </p>
+  <p>
+    <label>Fluid density, &rho;:</label>
+    <input id="inputDensity" type="number" step="0.001" placeholder="Fluid density" oninput="calcRe(this.value)"
+      onchange="calcRe(this.value)">
+  </p>
+  <p>
+    <label>Fluid viscosity (dynamic), &eta;:</label>
+    <input id="inputViscosity" type="number" step="0.001" placeholder="Fluid viscosity" oninput="calcRe(this.value)"
+      onchange="calcRe(this.value)">
+  </p>
+
+  <p>Reynolds Number: <span id="outputRe"></span></p>
+
+
+</body>
+
+</html>
