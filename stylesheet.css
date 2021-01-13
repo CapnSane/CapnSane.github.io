@@ -6,6 +6,47 @@ body {
     url(/assets/beads.jpg) bottom center repeat fixed;
 }
 
+body.calc {
+  color: #1F7F1F;
+  max-width: auto;
+  background-color: rgb(15, 15, 15, 0.98);
+  background:
+    linear-gradient(
+            rgba(0, 0, 0, 0.9), 
+            rgba(0, 0, 0, 0.9)
+          ),
+    url(/assets/chip.png) top center repeat fixed;
+}
+
+h2.calc {
+  color: #1F7F1F;
+  font-size: 2.7em;
+  text-align: center;
+}
+
+p.calc {
+  color: #1F7F1F;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+p.rey {
+  color: #1db31d;
+  font-size: 1.9em;
+  text-align: center;
+}
+
+input.searchbar {
+  height: 45px;
+  width: 150px;
+  font-size: 16px;
+  color: #1F7F1F;
+  outline: #1F7F1F;
+  margin-left: 15px;
+  padding-left: 17px;
+  background-color: rgb(14, 14, 14);
+}
+
 div.indice {
   background-color: rgba(5, 15, 0, 0.8);
 }

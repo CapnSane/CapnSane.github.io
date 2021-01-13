@@ -1,24 +1,11 @@
-let V = null;
-let L = null;
-let d = null;
-let p = null;
-
-function calcRe() {
-  
+function reynoldsCalc() {
 
   V = document.getElementById("inputVelocity").value;
-  console.log("V = ",V);
-
   L = document.getElementById("inputDiameter").value;
-  console.log("L = ",L);
-
   d = document.getElementById("inputDensity").value;
-  console.log("d = ",d);
-
   p = document.getElementById("inputViscosity").value;
-  console.log("p = ",p);
-
-   // m/l cm/s ft/s mph in/s
+  console.log("V = ", V, "\nL = ", L, "\nd = ", d, "\np = ", p);
+   // m/s cm/s ft/s mph in/s
    // m in ft cm nm
    // kg/m^3 lb/in^3 kg/l
    // cP Pa-s kb/m-s slug/ft-s
