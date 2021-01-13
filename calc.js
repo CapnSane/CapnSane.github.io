@@ -1,17 +1,29 @@
-function reynoldsCalc() {
-
+function convertUnits() {
+  // Get the input values
   V = document.getElementById("inputVelocity").value;
   L = document.getElementById("inputDiameter").value;
   d = document.getElementById("inputDensity").value;
   p = document.getElementById("inputViscosity").value;
-  // console.log("V = ", V, "\nL = ", L, "\nd = ", d, "\np = ", p);
-   // m/s cm/s ft/s mph in/s
-   // m in ft cm nm
-   // kg/m^3 lb/in^3 kg/l
-   // cP Pa-s kb/m-s slug/ft-s
-  
-  
-  document.getElementById("outputRe").innerHTML=(V*L*d)/p;
+
+  // Velocity units converting
+  var veloc = document.getElementById("unitV").value;
+  v1 = V / veloc;
+
+  // // Length units converting
+  var len = document.getElementById("unitL").value;
+  l1 = L / len;
+
+  // // Density units converting
+  var den = document.getElementById("unitD").value;
+  d1 = d / den;
+
+  // // Viscosity units converting
+  var visc = document.getElementById("unitP").value;
+  p1 = p / visc;
+
+  // Print the answer on the website screen
+  document.getElementById("outputRe").innerHTML = ((v1 * l1 * d1) / p1);
+
 }
 
 // // abaixo de 2000
