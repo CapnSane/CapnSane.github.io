@@ -12,38 +12,75 @@ body.calc {
   background-color: rgb(15, 15, 15, 0.98);
   background:
     linear-gradient(
-            rgba(0, 0, 0, 0.9), 
-            rgba(0, 0, 0, 0.9)
+            rgba(0, 0, 0, 0.93), 
+            rgba(0, 0, 0, 0.93)
           ),
     url(/assets/chip.png) top center repeat fixed;
 }
 
-h2.calc {
+h2.title {
   color: #1F7F1F;
-  font-size: 2.7em;
+  font-weight: bold;
+  font-size: 2.4em;
   text-align: center;
+  text-shadow: 2px 2px 5px #000000;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 p.calc {
   color: #1F7F1F;
-  font-size: 1.7em;
+  font-size: 1.4em;
+  text-shadow: 2px 2px 5px #000000;
+  margin-bottom: 40px;
+}
+
+p.text {
+  color: #1F7F1F;
+  font-size: 1.4em;
   text-align: center;
+  text-shadow: 2px 2px 5px #000000;
+  margin: 0 110px 40px 110px;
 }
 
 p.rey {
   color: #1db31d;
-  font-size: 1.9em;
+  font-size: 1.6em;
   text-align: center;
+  text-shadow: 2px 2px 5px #000000;
+  font-weight: bold;
+  font-size: 36px;
+  padding-left: 20px;
 }
 
 input.searchbar {
   height: 45px;
   width: 150px;
-  font-size: 16px;
+  font-size: 18px;
   color: #1F7F1F;
   outline: #1F7F1F;
   margin-left: 15px;
   padding-left: 17px;
+  background-color: rgb(14, 14, 14);
+}
+
+select {
+  background-color: rgb(14, 14, 14);
+  color: #1F7F1F;
+  height: 45px;
+  font-size: 17px;
+  text-align: center;
+}
+
+select option {
+  height: 45px;
+  width: 100px;
+  font-size: 18px;
+  color: #1F7F1F;
+  outline: #1F7F1F;
+  margin-left: 15px;
+  padding-left: 17px;
+  background: rgb(14, 14, 14);
   background-color: rgb(14, 14, 14);
 }
 

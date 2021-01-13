@@ -1,56 +1,147 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+  <!-- Metadata -->
   <meta charset="utf-8">
   <meta name="Leonardo Schneider" content="SitePoint">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Reynolds Number calculator by Leonardo Schneider</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <!-- Imports -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <!-- <script src="main.js"></script> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <script src="calc.js"></script>
   <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+
 </head>
 
 <body class="calc">
+  <div class="container-fluid">
+    <div class="row mb-5 index">
+      <div class="col-sm-12 d-inline-flex fixed-top justify-content-end indice" style="height: 30px;">
+        <a class="mr-3" style="color:#2ebc2e" href="/#home">HOME</a>
+        <a class="mr-3" style="color:#2ebc2e" href="/pages/about.html">ABOUT</a>
+        <a class="mr-3" style="color:#2ebc2e" href="/#projects">PROJECTS</a>
+        <a class="mr-3" style="color:#2ebc2e" href="/Resume-Leonardo_Schneider.pdf">CV - RESUME</a>
+        <a class="mr-3" style="color:#2ebc2e" href="/#publications">PUBLICATIONS</a>
+        <a class="mr-3" style="color:#2ebc2e" href="#ReynoldsCalc">Reynolds Calculator</a>
+        <a class="mr-3" style="color:#2ebc2e" href="/pages/contact.html">CONTACT</a>
+        <div class="dropdown idioma d-inline">
+          <a class="dropdown-toggle mr-5" style="color:rgb(0, 255, 0)" data-toggle="dropdown">
+            <img class="img-fluid" src="/assets/language_icon.png" alt="Select language">
+          </a>
+          <div class="dropdown-menu element">
+            <a href="javascript:;" id="English" style="color:rgba(0, 255, 0, 0.5)" class="dropdown-item current"><span
+                class="flag-icon flag-icon-gb"></span>English</a>
+            <a href="javascript:;" id="Portuguese" style="color:rgb(0, 255, 0, 0.5)" class="dropdown-item current"><span
+                class="flag-icon flag-icon-br"></span>Português (Brasil)</a>
+            <a href="javascript:;" id="Japanese" style="color:rgb(0, 255, 0, 0.5)" class="dropdown-item current"><span
+                class="flag-icon flag-icon-jp"></span>日本語</a>
+            <a href="javascript:;" id="German" style="color:rgb(0, 255, 0, 0.5)" class="dropdown-item"><span
+                class="flag-icon flag-icon-de"></span>Deutsch</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <h2 class="calc">Reynolds Number Calculator</h2>
-    <p class="calc"> This calculator calculates the Reynolds Number using the flow characteristics provided.
-      This number tells us what type of flow is expected for a given pipe, whether laminar, transitional or turbulent.
-    </p>
-    <p class="calc"> By convention, there is an approximate number of Reynolds where the limits of some regimes
-      are defined. In systems whose Re is less than <strong>2000</strong> there is no turbulence. This non-turbulent
-      regime is called laminar flow. Systems whose Re is greater than 2000 are turbulent.
-    </p>
+    <div>
+      <h2 class="title">Reynolds Number Calculator</h2>
+      <p class="text"> This calculator calculates the Reynolds Number
+        using the flow characteristics provided.
+        This number tells us what type of flow is expected for a given pipe, whether laminar, transitional or turbulent.
+      </p>
+      <p class="text"> By convention, there is an approximate number of
+        Reynolds where the limits of some regimes
+        are defined. In systems whose Re is less than <strong>2000</strong> there is no turbulence. This non-turbulent
+        regime is called laminar flow. Systems whose Re is greater than 2000 are turbulent.
+      </p>
+    </div>
+
+    <hr style="margin: 0 100px 0 100px;">
+
+    <div class="container-fluid">
+      <div class="row index" style="text-align: right;">
+        <div class="col-sm-8">
+
+          <p class="calc" style="margin-top: 40px;">
+            <label>Free-stream fluid velocity, <i>V</i>:</label>
+            <input class="searchbar" id="inputVelocity" type="number" step="0.001" placeholder="Fluid velocity"
+              oninput="reynoldsCalc(this.value)" onchange="reynoldsCalc(this.value)" style="border: 1px solid #1F7F1F;">
+            <select id="unitV" style="border: 1px solid #1F7F1F;">
+              <option value="m/s"> m/s </option>
+              <option value="cm/s"> cm/s </option>
+              <option value="mph"> mph </option>
+              <option value="ft/s"> ft/s </option>
+              <option value="in/s"> in/s </option>
+            </select>
+          </p>
+        </div>
+        <div class="col-sm-8">
+          <p class="calc">
+            <label style="width: 252px; vertical-align: middle;">Characteristic distance (or pipe diameter), <i>L</i>:</label>
+            <input class="searchbar" id="inputDiameter" type="number" step="0.001" placeholder="Pipe diameter"
+              oninput="reynoldsCalc(this.value)" onchange="reynoldsCalc(this.value)" style="border: 1px solid #1F7F1F;">
+            <select id="unitL" style="border: 1px solid #1F7F1F;">
+              <option value="m"> m </option>
+              <option value="in"> in </option>
+              <option value="ft"> ft </option>
+              <option value="cm"> cm </option>
+              <option value="nm"> nm </option>
+            </select>
+          </p>
+        </div>
+        <div class="col-sm-8">
+          <p class="calc">
+            <label style="width: 300px; vertical-align: middle;">Fluid density, <i>&rho;</i>:</label>
+            <input class="searchbar" id="inputDensity" type="number" step="0.001" placeholder="Fluid density"
+              oninput="reynoldsCalc(this.value)" onchange="reynoldsCalc(this.value)" style="border: 1px solid #1F7F1F;">
+            <select id="unitD" style="border: 1px solid #1F7F1F;">
+              <option value="kg/m³"> kg/m³ </option>
+              <option value="lb/in³"> lb/in³ </option>
+              <option value="kg/l"> kg/l </option>
+            </select>
+          </p>
+        </div>
+        <div class="col-sm-8">
+          <p class="calc">
+            <label>Fluid viscosity (dynamic), <i>&eta;</i>:</label>
+            <input class="searchbar" id="inputViscosity" type="number" step="0.001" placeholder="Fluid viscosity"
+              oninput="reynoldsCalc(this.value)" onchange="reynoldsCalc(this.value)" style="border: 1px solid #1F7F1F;">
+            <select id="unitP" style="border: 1px solid #1F7F1F;">
+              <option value="Pa.s"> Pa.s </option>
+              <option value="cP"> cP </option>
+              <option value="kb/m.s"> kb/m.s </option>
+              <option value="slug/ft.s"> slug/ft.s </option>
+            </select>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="rey"> Reynolds Number: <span id="outputRe"></span></p>  
+    </div>
+
+    <hr style="margin: 30px 100px 30px 100px;">
+
+    <div class="row mt-4 copyright">
+      <div class="col-sm-12 fixed-bottom copyright">
+        <center>Copyright © 2020 Leonardo Schneider. All rights reserved.</center>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <hr>
-    <p class="calc">
-      <label>Free-stream fluid velocity, V:</label>
-      <input class="searchbar" id="inputVelocity" type="number" step="0.001" placeholder="Fluid velocity" oninput="reynoldsCalc(this.value)"
-        onchange="reynoldsCalc(this.value)">
-    </p>
-    <p class="calc">
-      <label>Characteristic distance (or pipe diameter), L:</label>
-      <input class="searchbar" id="inputDiameter" type="number" step="0.001" placeholder="Pipe diameter" oninput="reynoldsCalc(this.value)"
-        onchange="reynoldsCalc(this.value)">
-    </p>
-    <p class="calc">
-      <label>Fluid density, &rho;:</label>
-      <input class="searchbar" id="inputDensity" type="number" step="0.001" placeholder="Fluid density" oninput="reynoldsCalc(this.value)"
-        onchange="reynoldsCalc(this.value)">
-    </p>
-    <p class="calc">
-      <label>Fluid viscosity (dynamic), &eta;:</label>
-      <input class="searchbar" id="inputViscosity" type="number" step="0.001" placeholder="Fluid viscosity" oninput="reynoldsCalc(this.value)"
-        onchange="reynoldsCalc(this.value)">
-    </p>
-
-    <p class="rey"> Reynolds Number: <span id="outputRe" style="font-weight: bold; font-size: 30px; padding-left: 20px;"></span></p>
-    <hr>
-
-  </div>
-
 </body>
 
 </html>

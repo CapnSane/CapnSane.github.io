@@ -4,7 +4,7 @@ function reynoldsCalc() {
   L = document.getElementById("inputDiameter").value;
   d = document.getElementById("inputDensity").value;
   p = document.getElementById("inputViscosity").value;
-  console.log("V = ", V, "\nL = ", L, "\nd = ", d, "\np = ", p);
+  // console.log("V = ", V, "\nL = ", L, "\nd = ", d, "\np = ", p);
    // m/s cm/s ft/s mph in/s
    // m in ft cm nm
    // kg/m^3 lb/in^3 kg/l
