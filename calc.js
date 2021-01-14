@@ -22,8 +22,11 @@ function convertUnits() {
   p1 = p / visc;
 
   // Print the answer on the website screen
-  document.getElementById("outputRe").innerHTML = ((v1 * l1 * d1) / p1);
-
+  if (isNaN((v1 * l1 * d1) / p1)) {
+    var x = document.getElementById("outputRe").innerHTML = "";
+  } else {
+    var x = document.getElementById("outputRe").innerHTML = ((v1 * l1 * d1) / p1);
+  }
 }
 
 // // abaixo de 2000
