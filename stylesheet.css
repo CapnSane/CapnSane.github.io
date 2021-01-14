@@ -61,11 +61,11 @@ input.searchbar {
   outline: #1F7F1F;
   margin-left: 15px;
   padding-left: 17px;
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(14, 14, 14,0.65);
 }
 
 select {
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(14, 14, 14,0.65);
   color: #1F7F1F;
   height: 45px;
   font-size: 17px;
@@ -80,7 +80,6 @@ select option {
   outline: #1F7F1F;
   margin-left: 15px;
   padding-left: 17px;
-  background: rgb(14, 14, 14);
   background-color: rgb(14, 14, 14);
 }
 
