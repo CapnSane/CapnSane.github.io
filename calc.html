@@ -29,8 +29,8 @@
 
 <body class="calc">
   <div class="container-fluid">
-    <div class="row mb-5 index">
-      <div class="col-sm-12 d-inline-flex fixed-top justify-content-end indice" style="height: 30px;">
+    <div class="row mb-5">
+      <div class="col-sm-12 fixed-top indice">
         <a class="mr-3" style="color:#2ebc2e" href="/#home">HOME</a>
         <a class="mr-3" style="color:#2ebc2e" href="/pages/about.html">ABOUT</a>
         <a class="mr-3" style="color:#2ebc2e" href="/#projects">PROJECTS</a>
@@ -38,7 +38,7 @@
         <a class="mr-3" style="color:#2ebc2e" href="/#publications">PUBLICATIONS</a>
         <a class="mr-3" style="color:#2ebc2e" href="#convertUnits">Reynolds Calculator</a>
         <a class="mr-3" style="color:#2ebc2e" href="/pages/contact.html">CONTACT</a>
-        <div class="dropdown idioma d-inline">
+        <!-- <div class="dropdown idioma d-inline">
           <a class="dropdown-toggle mr-5" style="color:rgb(0, 255, 0)" data-toggle="dropdown">
             <img class="img-fluid" src="/assets/language_icon.png" alt="Select language">
           </a>
@@ -52,100 +52,103 @@
             <a href="javascript:;" id="German" style="color:rgb(0, 255, 0, 0.5)" class="dropdown-item"><span
                 class="flag-icon flag-icon-de"></span>Deutsch</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <div>
-      <h2 class="title">Reynolds number Calculator</h2>
-      <p class="text"> This calculator calculates the Reynolds number
-        using the flow characteristics provided.
-        This number tells us what type of flow is expected for a given pipe, whether laminar, transitional or turbulent.
-      </p>
-      <p class="text"> By convention, there is an approximate number of
-        Reynolds where the limits of some regimes
-        are defined. In systems whose Re is less than <strong>2000</strong> there is no turbulence. This non-turbulent
-        regime is called laminar flow. Systems whose Re is greater than 2000 are turbulent.
-      </p>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <h1 class="title"><strong>Reynolds Number Calculator</strong></h1>
+        <h5 class="text"> This calculator calculates the Reynolds Number
+          using the flow characteristics provided.
+          This number tells us what type of flow is expected for a given pipe, whether laminar, transitional or
+          turbulent.
+        </h5>
+        <h5 class="text"> By convention, there is an approximate number of
+          Reynolds where the limits of some regimes
+          are defined. In systems whose Re is less than <strong>2000</strong> there is no turbulence. This non-turbulent
+          regime is called laminar flow. Systems whose Re is greater than 2000 are turbulent.
+        </h5>
+      </div>
     </div>
 
     <hr style="margin: 0 100px 0 100px;">
 
-    <div class="container-fluid">
-      <div class="row index" style="text-align: right;">
-        <div class="col-sm-8">
-
-          <p class="calc" style="margin-top: 40px;">
-            <label>Free-stream fluid velocity, <i>V</i>:</label>
-            <input class="searchbar" id="inputVelocity" type="float" placeholder="Fluid velocity"
-              oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
-            <select id="unitV" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
-              <option value="1" selected> m/s </option>
-              <option value="100"> cm/s </option>
-              <option value="2.236936"> mph </option>
-              <option value="3.2808398950131233595800524934383"> ft/s </option>
-              <option value="39.37007874015748031496062992126"> in/s </option>
-            </select>
-          </p>
-        </div>
-        <div class="col-sm-8">
-          <p class="calc">
-            <label style="width: 252px; vertical-align: middle;">Characteristic distance (or pipe diameter), <i>L</i>:</label>
-            <input class="searchbar" id="inputDiameter" type="float" placeholder="Pipe diameter"
-              oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
-            <select id="unitL" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
-              <option value="1" selected> m </option>
-              <option value="100"> cm </option>
-              <option value="1000000000"> nm </option>
-              <option value="3.2808398950131233595800524934383"> ft </option>
-              <option value="39.37007874015748031496062992126"> in </option>
-            </select>
-          </p>
-        </div>
-        <div class="col-sm-8">
-          <p class="calc">
-            <label style="width: 300px; vertical-align: middle;">Fluid density, <i>&rho;</i>:</label>
-            <input class="searchbar" id="inputDensity" type="float" placeholder="Fluid density"
-              oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
-            <select id="unitD" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
-              <option value="1" selected> kg/m³ </option>
-              <option value="0.001"> kg/l </option>
-              <option value="0.000001"> g/mm³ </option>
-              <option value="0.0000361273"> lb/in³ </option>
-            </select>
-          </p>
-        </div>
-        <div class="col-sm-8">
-          <p class="calc">
-            <label>Fluid viscosity (dynamic), <i>&eta;</i>:</label>
-            <input class="searchbar" id="inputViscosity" type="float" placeholder="Fluid viscosity"
-              oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
-            <select id="unitP" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
-              <option value="1" selected> Pa⋅s </option>
-              <option value="1000"> cP </option>
-              <option value="1"> kg/m⋅s </option>
-              <option value="0.0208854342"> slug/ft⋅s </option>
-            </select>
-          </p>
-        </div>
+    <div class="row index" style="text-align: right;">
+      <div class="col-sm-8">
+        <p class="calc" style="margin-top: 40px;">
+          <label style="width: 300px; vertical-align: middle;">Free-stream fluid velocity, <i>V</i>:</label>
+          <input class="searchbar" id="inputVelocity" type="float" placeholder="Fluid velocity"
+            oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
+          <select id="unitV" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
+            <option value="1" selected> m/s </option>
+            <option value="100"> cm/s </option>
+            <option value="2.236936"> mph </option>
+            <option value="3.2808398950131233595800524934383"> ft/s </option>
+            <option value="39.37007874015748031496062992126"> in/s </option>
+          </select>
+        </p>
+      </div>
+      <div class="col-sm-8">
+        <p class="calc">
+          <label style="width: 252px; vertical-align: middle;">Characteristic distance (or pipe diameter),
+            <i>L</i>:</label>
+          <input class="searchbar" id="inputDiameter" type="float" placeholder="Pipe diameter"
+            oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
+          <select id="unitL" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
+            <option value="1" selected> m </option>
+            <option value="100"> cm </option>
+            <option value="1000000000"> nm </option>
+            <option value="3.2808398950131233595800524934383"> ft </option>
+            <option value="39.37007874015748031496062992126"> in </option>
+          </select>
+        </p>
+      </div>
+      <div class="col-sm-8">
+        <p class="calc">
+          <label style="width: 300px; vertical-align: middle;">Fluid density, <i>&rho;</i>:</label>
+          <input class="searchbar" id="inputDensity" type="float" placeholder="Fluid density"
+            oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
+          <select id="unitD" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
+            <option value="1" selected> kg/m³ </option>
+            <option value="0.001"> kg/l </option>
+            <option value="0.000001"> g/mm³ </option>
+            <option value="0.0000361273"> lb/in³ </option>
+          </select>
+        </p>
+      </div>
+      <div class="col-sm-8">
+        <p class="calc">
+          <label style="width: 300px; vertical-align: middle;">Fluid viscosity (dynamic), <i>&eta;</i>:</label>
+          <input class="searchbar" id="inputViscosity" type="float" placeholder="Fluid viscosity"
+            oninput="convertUnits(this.value)" onchange="convertUnits(this.value)" style="border: 1px solid #1F7F1F;">
+          <select id="unitP" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
+            <option value="1" selected> Pa⋅s </option>
+            <option value="1000"> cP </option>
+            <option value="1"> kg/m⋅s </option>
+            <option value="0.0208854342"> slug/ft⋅s </option>
+          </select>
+        </p>
       </div>
     </div>
+  </div>
 
-    <div>
-      <p class="rey"> Reynolds number: <span id="outputRe"></span></p>  
+  <div>
+    <p class="rey"> Reynolds Number: <span id="outputRe"></span></p>
+  </div>
+
+  <div>
+    <div id="div1"></div>
+  </div>
+
+  <hr style="margin: 30px 100px 30px 100px;">
+
+  <div class="row mt-4 copyright">
+    <div class="col-sm-12 fixed-bottom copyright">
+      <center>Copyright © 2020 Leonardo Schneider. All rights reserved.</center>
     </div>
-
-    <div>
-      <div id="div1"></div>
-    </div>
-
-    <hr style="margin: 30px 100px 30px 100px;">
-
-    <div class="row mt-4 copyright">
-      <div class="col-sm-12 fixed-bottom copyright">
-        <center>Copyright © 2020 Leonardo Schneider. All rights reserved.</center>
-      </div>
-    </div>
+  </div>
   </div>
 </body>
 

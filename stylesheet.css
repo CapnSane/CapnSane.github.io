@@ -11,17 +11,13 @@ body.calc {
   max-width: auto;
   background-color: rgb(15, 15, 15, 0.98);
   background:
-    linear-gradient(
-            rgba(0, 0, 0, 0.93), 
-            rgba(0, 0, 0, 0.93)
-          ),
+    linear-gradient(rgba(0, 0, 0, 0.93),
+      rgba(0, 0, 0, 0.93)),
     url(/assets/chip.png) top center repeat fixed;
 }
 
-h2.title {
+h1.title {
   color: #1F7F1F;
-  font-weight: bold;
-  font-size: 2.4em;
   text-align: center;
   text-shadow: 2px 2px 5px #000000;
   margin-top: 40px;
@@ -35,12 +31,11 @@ p.calc {
   margin-bottom: 40px;
 }
 
-p.text {
+h5.text {
   color: #1F7F1F;
-  font-size: 1.4em;
   text-align: center;
   text-shadow: 2px 2px 5px #000000;
-  margin: 0 110px 40px 110px;
+  margin: 0 0 40px 0;
 }
 
 p.rey {
@@ -61,11 +56,11 @@ input.searchbar {
   outline: #1F7F1F;
   margin-left: 15px;
   padding-left: 17px;
-  background-color: rgb(14, 14, 14,0.65);
+  background-color: rgb(14, 14, 14, 0.65);
 }
 
 select {
-  background-color: rgb(14, 14, 14,0.65);
+  background-color: rgb(14, 14, 14, 0.65);
   color: #1F7F1F;
   height: 45px;
   font-size: 17px;
@@ -85,6 +80,10 @@ select option {
 
 div.indice {
   background-color: rgba(5, 15, 0, 0.8);
+  right: 0;
+  display: inline;
+  text-align: right;
+  height: 30px;
 }
 
 div.copyright {
@@ -134,11 +133,11 @@ hr {
   height: 5px;
 }
 
-hr:after {
+/* hr:after {
   content: '🙡🙣';
   position: relative;
   top: -16px;
-}
+} */
 
 .element {
   position: absolute;
