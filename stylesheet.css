@@ -48,6 +48,14 @@ p.rey {
   padding-left: 20px;
 }
 
+p.flow {
+  color: #e61700;
+  font-size: 1.2em;
+  text-align: center;
+  text-shadow: 2px 2px 5px #000000;
+  padding-left: 20px;
+}
+
 input.searchbar {
   height: 45px;
   width: 150px;

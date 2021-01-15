@@ -99,6 +99,8 @@
           <select id="unitL" style="border: 1px solid #1F7F1F; cursor: pointer;" onchange="convertUnits(this.value)">
             <option value="1" selected> m </option>
             <option value="100"> cm </option>
+            <option value="1000"> mm </option>
+            <option value="1000000"> &micro;m </option>
             <option value="1000000000"> nm </option>
             <option value="3.2808398950131233595800524934383"> ft </option>
             <option value="39.37007874015748031496062992126"> in </option>
@@ -132,23 +134,23 @@
         </p>
       </div>
     </div>
-  </div>
 
-  <div>
-    <p class="rey"> Reynolds Number: <span id="outputRe"></span></p>
-  </div>
-
-  <div>
-    <div id="div1"></div>
-  </div>
-
-  <hr style="margin: 30px 100px 30px 100px;">
-
-  <div class="row mt-4 copyright">
-    <div class="col-sm-12 fixed-bottom copyright">
-      <center>Copyright © 2020 Leonardo Schneider. All rights reserved.</center>
+    <div>
+      <p class="rey"> Reynolds Number: <span id="outputRe"></span></p>
     </div>
-  </div>
+
+    <div>
+      <p class="flow"><span id="flow" class="flow"></span></p>
+    </div>
+
+
+    <hr style="margin: 30px 100px 30px 100px;">
+
+    <div class="row mt-4 copyright">
+      <div class="col-sm-12 fixed-bottom copyright">
+        <center>Copyright © 2020 Leonardo Schneider. All rights reserved.</center>
+      </div>
+    </div>
   </div>
 </body>
 

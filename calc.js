@@ -1,4 +1,8 @@
-const { divide } = require("mathjs");
+const {
+  divide,
+  and
+} = require("mathjs");
+document.body.onload = addElement;
 
 function convertUnits() {
   // Get the input values
@@ -29,36 +33,42 @@ function convertUnits() {
   // Print the answer on the website screen
   if (isNaN(reyNum)) {
     let x = document.getElementById("outputRe").innerHTML = "";
+  } else if (reyNum == Infinity) {
+    let x = document.getElementById("outputRe").innerHTML = "";
+  } else if ((v1 * l1 * d1) == 0) {
+    let x = document.getElementById("outputRe").innerHTML = "";
   } else {
     let x = document.getElementById("outputRe").innerHTML = (reyNum);
   }
 
   // Conditional text for the flow (laminar, transition, turbulent)
-  // if (reyNum <= 2000) {
-  //   const newDiv = document.createElement("div");
-  //   const newContent = document.createTextNode(
-  //     "Pipe flow is laminar in a pipe of diameter D."
-  //     );
-  //   newDiv.appendChild(newContent);
-  //   const currentDiv = document.getElementById("div1");
-  //     document.body.insertBefore(newDiv, currentDiv);
-  // } else if (2000 < reyNum < 2900) {
-  //   const newDiv = document.createElement("div");
-  //   const newContent = document.createTextNode(
-  //     "Pipe flow is transitioning to turbulent in a pipe of diameter D."
-  //   );
-  //   newDiv.appendChild(newContent);
-  //   const currentDiv = document.getElementById("div1");
-  //   document.body.insertBefore(newDiv, currentDiv);
-  // } else {
-  //   const newDiv = document.createElement("div");
-  //   const newContent = document.createTextNode(
-  //     "Pipe flow is fully turbulent in a pipe of diameter D."
-  //   );
-  //   newDiv.appendChild(newContent);
-  //   const currentDiv = document.getElementById("div1");
-  //   document.body.insertBefore(newDiv, currentDiv);
-  // }
+  let text1 = "Pipe flow is laminar in a pipe of diameter D.";
+  let text2 = "Pipe flow is transitioning to turbulent in a pipe of diameter D.";
+  let text3 = "Pipe flow is critical in a pipe of diameter D.";
+  let text4 = "Pipe flow is fully turbulent in a pipe of diameter D.";
+  if (reyNum == 0) {
+    document.getElementById("flow").innerHTML = "";
+
+  } else if (reyNum <= 2000) {
+    document.getElementById("flow").innerHTML = text1.fontcolor("#005eff");
+
+  } else if (reyNum <= 2900 && reyNum < 4000) {
+    document.getElementById("flow").innerHTML = text2.fontcolor("#ffeb51");;
+
+  } else if (reyNum <= 4000) {
+    document.getElementById("flow").innerHTML = text3.fontcolor("#ff6251");;
+
+  } else if (reyNum > 4000 && reyNum != Infinity) {
+    document.getElementById("flow").innerHTML = text4.fontcolor("#e61700");;
+
+  } else if (isNaN(reyNum)) {
+    document.getElementById("flow").innerHTML = "";
+
+  } else if (reyNum == Infinity) {
+    document.getElementById("flow").innerHTML = "";
+  }
+  console.log(reyNum);
+
 }
 
 // // abaixo de 2000
