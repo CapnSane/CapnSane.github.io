@@ -15,15 +15,15 @@ function convertUnits() {
   const veloc = document.getElementById("unitV").value;
   v1 = V / veloc;
 
-  // // Length units converting
+  // Length units converting
   const len = document.getElementById("unitL").value;
   l1 = L / len;
 
-  // // Density units converting
+  // Density units converting
   const den = document.getElementById("unitD").value;
   d1 = d / den;
 
-  // // Viscosity units converting
+  // Viscosity units converting
   const visc = document.getElementById("unitP").value;
   p1 = p / visc;
 
@@ -41,7 +41,7 @@ function convertUnits() {
     let x = document.getElementById("outputRe").innerHTML = (reyNum);
   }
 
-  // Conditional text for the flow (laminar, transition, turbulent)
+  // Conditional text for the flow (laminar, transition, critical, turbulent)
   let text1 = "Pipe flow is laminar in a pipe of diameter D.";
   let text2 = "Pipe flow is transitioning to turbulent in a pipe of diameter D.";
   let text3 = "Pipe flow is critical in a pipe of diameter D.";
@@ -67,18 +67,5 @@ function convertUnits() {
   } else if (reyNum == Infinity) {
     document.getElementById("flow").innerHTML = "";
   }
-  console.log(reyNum);
 
 }
-
-// // abaixo de 2000
-// Plate flow is still laminar at a distance D from the leading edge.
-// Pipe flow is laminar in a pipe of diameter D.
-
-// // acima de 2000
-// Plate flow is still laminar at a distance D from the leading edge.
-// Pipe flow is transitioning to turbulent in a pipe of diameter D.
-
-// // acima de 2900
-// Plate flow is transitioning to turbulent at a distance D from the leading edge.
-// Pipe flow is fully turbulent in a pipe of diameter D.
