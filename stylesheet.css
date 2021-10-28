@@ -16,6 +16,24 @@ body.calc {
     url(/assets/chip.png) top center repeat fixed;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+hr {
+  border: none;
+  border-top: 3px double #1F7F1F;
+  color: #1F7F1F;
+  text-align: center;
+  height: 5px;
+}
+
+/* hr:after {
+  content: '🙡🙣';
+  position: relative;
+  top: -16px;
+} */
+
 h1.title {
   color: #1F7F1F;
   text-align: center;
@@ -128,23 +146,6 @@ div.carousel-item div.carousel-caption {
   bottom: initial;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-hr {
-  border: none;
-  border-top: 3px double #1F7F1F;
-  color: #1F7F1F;
-  text-align: center;
-  height: 5px;
-}
-
-/* hr:after {
-  content: '🙡🙣';
-  position: relative;
-  top: -16px;
-} */
 
 .element {
   position: absolute;
@@ -200,4 +201,36 @@ hr {
 
 .black-text {
   color: black;
+}
+
+.offset-2 {
+  margin-left: 16.666667%;
+  margin-right: 16.666667%;
+}
+
+.tarvos {
+  text-decoration: none;
+  font-weight: bold;
+  outline: none;
+  color: #1F7F1F;
+}
+
+.tarvos:hover {
+  font-weight: normal;
+  color: #1F7F1F;
+  text-decoration: none;
+}
+
+.my-photo {
+  height: 250px;
+  width: 250px;
+}
+
+.photo-center {
+  margin: auto;
+}
+
+.about-center {
+  margin: auto;
+  width: 60vw;
 }
