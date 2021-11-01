@@ -221,6 +221,20 @@ div.carousel-item div.carousel-caption {
   text-decoration: none;
 }
 
+.github {
+  text-decoration: none;
+  transform: scale(0.6);
+  font-weight: normal;
+  outline: none;
+  color: #1F7F1F;
+}
+
+.github:hover {
+  font-weight: bold;
+  transform: scale(0.7);
+  text-decoration: none;
+}
+
 .my-photo {
   height: 250px;
   width: 250px;
