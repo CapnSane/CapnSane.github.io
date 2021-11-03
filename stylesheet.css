@@ -217,7 +217,7 @@ div.carousel-item div.carousel-caption {
 
 .tarvos:hover {
   font-weight: bold;
-  color: #1F7F1F;
+  color: #269726;
   text-decoration: none;
 }
 
@@ -226,7 +226,7 @@ div.carousel-item div.carousel-caption {
   transform: scale(0.6);
   font-weight: normal;
   outline: none;
-  color: #208620;
+  color: #1F7F1F;
 }
 
 .github:hover {
