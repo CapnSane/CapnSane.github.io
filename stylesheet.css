@@ -146,6 +146,14 @@ div.carousel-item div.carousel-caption {
   bottom: initial;
 }
 
+.headbar {
+  color: #2ebc2e;
+}
+
+.headbar:hover {
+  text-decoration: none;
+  color: #1F7F1F;
+}
 
 .element {
   position: absolute;
@@ -248,3 +256,42 @@ div.carousel-item div.carousel-caption {
   margin: auto;
   width: 60vw;
 }
+
+/* .dropbtn {} */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /* background-color: #f1f1f1; */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #2ebc2e;
+  /* padding: 12px 16px; */
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(38, 46, 35);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropproj:hover {
+  color: #1F7F1F;
+}
+
+/* .dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+} */
