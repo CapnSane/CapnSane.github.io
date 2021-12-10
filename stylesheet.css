@@ -150,11 +150,15 @@ div.carousel-item div.carousel-caption {
 }
 
 .about {
-  margin: 100px 150px 100px 150px;
   text-align: justify;
 }
 
-.aboutme {
+.about-sec {
+  margin: 200px 150px 100px 200px;
+  text-align: justify;
+}
+
+.about-me {
   margin-left: 50px;
 }
 
@@ -176,6 +180,7 @@ div.carousel-item div.carousel-caption {
   position: relative;
   text-align: center;
   font-weight: bold;
+  padding-bottom: 50px;
 }
 
 .footer {
