@@ -18,6 +18,11 @@ body.calc {
     url(/assets/chip.png) top center repeat fixed;
 }
 
+#about {
+  color: #1F7F1F;
+  background-color: rgb(15, 15, 15, 0.98);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -117,10 +122,6 @@ div.copyright {
   background-color: rgba(5, 15, 0, 0.8);
 }
 
-div.aboutme {
-  text-align: justify;
-}
-
 img.dark {
   filter: brightness(25%);
 }
@@ -148,6 +149,20 @@ div.carousel-item div.carousel-caption {
   bottom: initial;
 }
 
+.about {
+  margin: 100px 150px 100px 150px;
+  text-align: justify;
+}
+
+.aboutme {
+  margin-left: 50px;
+}
+
+.about-img {
+  margin: 50px;
+  float: left;
+}
+
 .headbar {
   color: #2ebc2e;
 }
@@ -155,6 +170,20 @@ div.carousel-item div.carousel-caption {
 .headbar:hover {
   text-decoration: none;
   color: #1F7F1F;
+}
+
+.nasa {
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .element {
@@ -246,6 +275,7 @@ div.carousel-item div.carousel-caption {
 }
 
 .my-photo {
+  display: inline-block;
   height: 250px;
   width: 250px;
 }
