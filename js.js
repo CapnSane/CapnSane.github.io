@@ -8,7 +8,14 @@ function currentDate() {
 
   var message = `Last Updated on ${today}`;
   document.getElementById('updateFooter').innerHTML = message;
-  console.log(message);
+
+  // fetch('date.txt')
+  //   .then((response) => response.text())
+  //   .then((data) => {
+  //     // Do something with your data
+  //     var message = `Last Updated on ${data}`;
+  //     document.getElementById('updateFooter').innerHTML = message;
+  //   });
 }
 
 window.onload = currentDate();
