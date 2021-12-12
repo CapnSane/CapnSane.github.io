@@ -122,6 +122,12 @@ div.copyright {
   background-color: rgba(5, 15, 0, 0.8);
 }
 
+div.update-footer {
+  font-size: 0.8rem;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
 img.dark {
   filter: brightness(25%);
 }
