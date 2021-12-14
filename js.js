@@ -12,7 +12,6 @@ function currentDate() {
   fetch('date.txt')
     .then((response) => response.text())
     .then((data) => {
-      // Do something with your data
       var message = `Last Updated on ${data}`;
       document.getElementById('updateFooter').innerHTML = message;
     });
