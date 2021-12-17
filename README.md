@@ -2,7 +2,8 @@
 
 This repository is dedicated to personal tests, creating portfolio, developing and trying new html-css-js things, and to continue remembering those things that we ever forget as time goes by.
 
-For direct access you can click on - [https://capnsane.github.io/](https://capnsane.github.io/)
+For direct access you can click on:
+<a target="_blank" href="https://capnsane.github.io/">https://capnsane.github.io/</a>
 
 ## Portfolio
 
