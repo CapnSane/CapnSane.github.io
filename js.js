@@ -2,7 +2,7 @@ function currentDate() {
   fetch('date.txt')
     .then((response) => response.text())
     .then((data) => {
-      var message = `Last Updated on ${data}`;
+      var message = `Last Update on ${data}`;
       document.getElementById('updateFooter').innerHTML = message;
     });
 }
