@@ -1,0 +1,127 @@
+
+	
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mars Perseverance Rover: Boarding Pass</title>
+<link href='/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<meta name="title" content="Send Your Name to Mars">
+<meta property="og:title" content="Send Your Name to Mars" />
+<meta name="creator" content="mars.nasa.gov">
+<meta name="author" content="mars.nasa.gov">
+<meta name="keywords" content="Mars 2020, mission, send, name, frequent flyer, Mars, facts, images, NASA, planet, rover, space, mission">
+<meta name="description" content="View and share your Boarding Pass.  See your Frequent Flyer points: go.nasa.gov/Mars2020Pass">
+<meta property="og:description" content="View and share your Boarding Pass.  See your Frequent Flyer points: go.nasa.gov/Mars2020Pass" />
+<meta name="twitter:title" content="Send Your Name to Mars">
+<meta name="twitter:description" content="View and share your Boarding Pass.  See your Frequent Flyer points: go.nasa.gov/Mars2020Pass">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="" />
+<meta name="twitter:image" content="">
+<meta property="og:url" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="24YTv3DMgPjuCosK3yyc8RX9chB0AzhIxGajBBxbwMU" />
+<script defer id="_fed_an_ua_tag" type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NASA&subagency=JPL-Mars-MARS2020&pua=UA-9453474-9&dclink=true"></script>
+<style>html, body {font-family: Arial, Helvetica, sans-serif;}</style>
+</head>
+<body id="syntm-mars2020" class="pageContent embed">
+<div id="containerMain">
+    <div id="Boarding-Pass-Page" class="section" style="max-width:1440px">
+        <div class="Your-Boarding-Pass">
+            <div class="boarding-pass">
+                <div id="BoardingTicket">
+                    <div class="no-canvas-version">
+                        <figure class="ticketImgRatio"></figure>
+                        <div id="ticketID" class="number"></div>
+                        <div id="ticketName" class="name">
+                            <div id="ticketNameFirst" class="firstNameText"></div>
+                            <div id="ticketNameLast" class="lastNameText"></div>
+                        </div>
+                    </div>
+                    <div class="boarding">
+                        <img src="/layout/syntm/images/mars2020/now_boarding_mars2020.jpg" id="image-boarding-pass" class="image-boarding" alt="boarding pass" title="boarding pass" width="100%" data-pin-nopin="remove" style="display:none;">
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="credit">
+            <p><a style="color:white;text-decoration:none;" href="/participate/send-your-name/mars2020/certificate/744483044239" target="_blank">Image Credit: mars.nasa.gov + &nbsp;</p>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="module">
+    // import {generateBoardingPass} from './boardingpass.js';
+
+    const API_URL = 'https://mars.nasa.gov';
+    getSingleCertificateAPI(744483044239)
+    //Call to the API that reutrns a single boarding pass
+    function getSingleCertificateAPI(cert_id) {
+        axios.get(`${API_URL}/syn-mars/certificates/` + cert_id)
+            .then((r) => {
+                var payload = r.data.payload
+                var ticketID = document.getElementById('ticketID')
+                var ticketNameFirst = document.getElementById('ticketNameFirst')
+                var ticketNameLast = document.getElementById('ticketNameLast')
+                var mission = payload.mission
+                if(mission === 'mars-2020'){
+                    ticketID.innerHTML += 'M2M' + payload.cert_id
+                    ticketNameFirst.innerHTML += payload.first_name.toUpperCase()
+                    ticketNameLast.innerHTML += payload.last_name.toUpperCase()
+                }
+
+                else{
+                    var main = document.querySelector('#containerMain')
+                    var error = '<p class="error">Certificate not found.</p>'
+                    main.innerHTML = main.innerHTML += error
+                }
+                
+                // generateBoardingPass()
+                
+            })
+            .catch((e) => {
+               var main = document.querySelector('#containerMain')
+               var error = '<p class="error">Certificate not found.</p>'
+               main.innerHTML = main.innerHTML += error
+
+            })
+    }
+</script>
+<link rel="stylesheet" href="/layout/syntm/css/boarding-pass.css">
+<style>
+.pageContent {
+    font-family: "Montserrat",Helvetica,Arial,sans-serif;
+}
+
+.credit {
+    position: relative;
+    float:left;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+.pageContent:hover .credit {
+    opacity: 1;
+}
+.credit p {
+    position: absolute;
+    bottom: -15px;
+    width: 100%;
+    text-align: right;
+    background-color: rgba(85, 85, 85, 0.8);
+    }
+</style>
+
+
+
+
+

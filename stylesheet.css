@@ -189,6 +189,10 @@ div.carousel-item div.carousel-caption {
   padding-bottom: 50px;
 }
 
+.nasa__image {
+  width: 50%;
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -258,14 +262,14 @@ div.carousel-item div.carousel-caption {
   margin-right: 16.666667%;
 }
 
-.tarvos {
+.about__links {
   text-decoration: none;
   font-weight: bold;
   outline: none;
   color: #1F7F1F;
 }
 
-.tarvos:hover {
+.about__links:hover {
   font-weight: bold;
   color: #269726;
   text-decoration: none;
