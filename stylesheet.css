@@ -135,6 +135,9 @@ img.dark {
 img.dark50 {
   filter: brightness(50%);
 }
+img.dark20 {
+  filter: brightness(20%);
+}
 
 img.autofig {
   max-width: 100%;
