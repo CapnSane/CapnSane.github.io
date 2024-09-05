@@ -185,6 +185,24 @@ div.carousel-item div.carousel-caption {
   color: #1F7F1F;
 }
 
+.img-project:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: all 0.9s ease-in-out 0s;
+  -moz-transition: all 0.9s ease-in-out 0s;
+  -ms-transition: all 0.9s ease-in-out 0s;
+  -o-transition: all 0.9s ease-in-out 0s;
+  transition: all 0.9s ease-in-out 0s;
+}
+
+.img-project__container {
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0 15px;
+  max-width: 20%;
+}
+
 .nasa {
   position: relative;
   text-align: center;
