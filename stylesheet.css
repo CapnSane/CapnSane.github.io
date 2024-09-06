@@ -316,6 +316,10 @@ div.carousel-item div.carousel-caption {
   width: 250px;
 }
 
+.max-w-none {
+  max-width: none !important;
+}
+
 .photo-center {
   margin: auto;
 }
