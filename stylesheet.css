@@ -6,6 +6,13 @@ body {
     linear-gradient(rgba(0, 0, 0, 0.2),
       rgba(0, 0, 0, 0.2)),
     url(/assets/beads.jpg) bottom center repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  background-color: #f4f4f9; /* Light gray background */
+  font-family: Arial, sans-serif; /* Clean font */
 }
 
 body.calc {
@@ -371,3 +378,13 @@ div.carousel-item div.carousel-caption {
 /* .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 } */
+
+/* Style for the report.html page */
+#checklistForm {
+  background-color: #ffffff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px; /* Inner spacing */
+  max-width: 600px; /* Limit the width */
+  margin: 50px auto; /* Center horizontally and add vertical spacing */
+}

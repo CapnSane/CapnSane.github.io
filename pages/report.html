@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Checklist</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Checklist para Comear um Novo Projeto</h1>
+
+    <form id="checklistForm">
+      <h2>1 - Definicao Estrategica</h2>
+      <p><strong>Problema e Objetivo</strong></p>
+      <ul>
+        <li><label><input type="checkbox"> O problema que o projeto resolve está claramente definido.</label></li>
+        <li><label><input type="checkbox"> O público-alvo foi identificado.</label></li>
+        <li><label><input type="checkbox"> O diferencial competitivo foi determinado.</label></li>
+        <li><label><input type="checkbox"> Foi decidido se será um MVP ou um produto completo.</label></li>
+      </ul>
+
+      <p><strong>Requisitos</strong></p>
+      <ul>
+        <li><label><input type="checkbox"> Os requisitos funcionais foram listados.</label></li>
+        <li><label><input type="checkbox"> Os requisitos não funcionais foram listados.</label></li>
+        <li><label><input type="checkbox"> As restricoes tecnicas foram identificadas.</label></li>
+        <li><label><input type="checkbox"> Os criterios de sucesso foram definidos.</label></li>
+      </ul>
+
+      <h2>2 - Planejamento Tecnico</h2>
+      <p><strong>Arquitetura</strong></p>
+      <ul>
+        <li><label><input type="radio" name="architecture"> Frontend e Backend separados</label></li>
+        <li><label><input type="radio" name="architecture"> Monolito</label></li>
+        <li><label><input type="radio" name="architecture"> Microsservicos</label></li>
+      </ul>
+
+      <p><strong>Stack Tecnologica</strong></p>
+      <h4>Frontend</h4>
+      <ul>
+        <li><label><input type="radio" name="frontendFramework"> React</label></li>
+        <li><label><input type="radio" name="frontendFramework"> Vue</label></li>
+        <li><label><input type="radio" name="frontendFramework"> Angular</label></li>
+      </ul>
+      <ul>
+        <li><label><input type="radio" name="uiLibrary"> Tailwind</label></li>
+        <li><label><input type="radio" name="uiLibrary"> Material UI</label></li>
+        <li><label><input type="radio" name="uiLibrary"> Bootstrap</label></li>
+      </ul>
+
+      <h4>Backend</h4>
+      <ul>
+        <li><label><input type="radio" name="backendLanguage"> Node.js</label></li>
+        <li><label><input type="radio" name="backendLanguage"> Python</label></li>
+        <li><label><input type="radio" name="backendLanguage"> Java</label></li>
+      </ul>
+      <ul>
+        <li><label><input type="radio" name="backendFramework"> Express</label></li>
+        <li><label><input type="radio" name="backendFramework"> Django</label></li>
+        <li><label><input type="radio" name="backendFramework"> Spring</label></li>
+      </ul>
+
+      <h4>Banco de Dados</h4>
+      <ul>
+        <li><label><input type="radio" name="database"> SQL (PostgreSQL, MySQL)</label></li>
+        <li><label><input type="radio" name="database"> NoSQL (MongoDB)</label></li>
+      </ul>
+
+      <h2>3 - UX/UI</h2>
+      <ul>
+        <li><label><input type="checkbox"> O fluxo do usuario foi definido.</label></li>
+        <li><label><input type="checkbox"> Wireframes e prototipos foram criados.</label></li>
+        <li><label><input type="checkbox"> A identidade visual e a responsividade foram planejadas.</label></li>
+      </ul>
+
+      <h2>4 - Infraestrutura</h2>
+      <ul>
+        <li><label><input type="checkbox"> O provedor de hospedagem foi escolhido.</label></li>
+        <li><label><input type="checkbox"> SSL e seguranca foram configurados.</label></li>
+        <li><label><input type="checkbox"> Backups automaticos foram planejados.</label></li>
+      </ul>
+
+      <h2>5 - Organizacao do Projeto</h2>
+      <ul>
+        <li><label><input type="checkbox"> A estrutura de pastas foi definida.</label></li>
+        <li><label><input type="checkbox"> Lint e formatter foram configurados.</label></li>
+        <li><label><input type="checkbox"> Um README inicial foi criado.</label></li>
+        <li><label><input type="checkbox"> As tarefas foram organizadas (Kanban).</label></li>
+      </ul>
+
+      <button type="button" onclick="generatePDF()">Baixar PDF</button>
+    </form>
+  </div>
+
+  <style>
+    #checklistForm {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 700px;
+      margin: 50px auto;
+    }
+
+    #checklistForm h2 {
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #checklistForm h4 {
+      margin: 8px 0 5px 0;
+      font-size: 14px;
+    }
+
+    #checklistForm p {
+      margin: 8px 0 5px 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    #checklistForm ul {
+      list-style: none;
+      padding-left: 15px;
+      margin: 5px 0 8px 0;
+    }
+
+    #checklistForm li {
+      margin: 3px 0;
+      font-size: 12px;
+    }
+
+    #checklistForm input[type="checkbox"],
+    #checklistForm input[type="radio"] {
+      margin-right: 6px;
+    }
+  </style>
+
+  <script>
+    function generatePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      });
+
+      const form = document.getElementById('checklistForm');
+      let yPosition = 10;
+      const pageHeight = doc.internal.pageSize.getHeight();
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const margin = 10;
+      const maxWidth = pageWidth - (2 * margin);
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(14);
+      doc.text('CHECKLIST PARA NOVO PROJETO', margin, yPosition);
+      yPosition += 8;
+
+      const sections = form.querySelectorAll('h2, h4, p, ul');
+
+      sections.forEach(section => {
+        if (section.tagName === 'H2') {
+          if (yPosition > pageHeight - 20) {
+            doc.addPage();
+            yPosition = 10;
+          }
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(12);
+          doc.text(section.textContent, margin, yPosition);
+          yPosition += 7;
+        } else if (section.tagName === 'H4') {
+          if (yPosition > pageHeight - 20) {
+            doc.addPage();
+            yPosition = 10;
+          }
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(11);
+          doc.text(section.textContent, margin + 5, yPosition);
+          yPosition += 6;
+        } else if (section.tagName === 'P') {
+          if (yPosition > pageHeight - 20) {
+            doc.addPage();
+            yPosition = 10;
+          }
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(10);
+          doc.text(section.textContent, margin + 5, yPosition);
+          yPosition += 5;
+        } else if (section.tagName === 'UL') {
+          section.querySelectorAll('li').forEach(item => {
+            if (yPosition > pageHeight - 10) {
+              doc.addPage();
+              yPosition = 10;
+            }
+            const input = item.querySelector('input');
+            const label = item.textContent.trim();
+            const checked = input && input.checked ? '[X]' : '[ ]';
+            const text = `${checked} ${label}`;
+            
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            const lines = doc.splitTextToSize(text, maxWidth - 10);
+            lines.forEach((line, index) => {
+              doc.text(line, margin + 10, yPosition);
+              yPosition += 4;
+            });
+          });
+          yPosition += 2;
+        }
+      });
+
+      doc.save('Project_Checklist.pdf');
+    }
+  </script>
+</body>
+
+</html>
